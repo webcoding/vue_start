@@ -1,6 +1,7 @@
 require('babel-register')
 var config = require('../../config')
 
+// e2e: UI 测试
 // http://nightwatchjs.org/guide#settings-file
 module.exports = {
   "src_folders": ["test/e2e/specs"],

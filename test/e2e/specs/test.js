@@ -1,6 +1,7 @@
 // For authoring Nightwatch tests, see
 // http://nightwatchjs.org/guide#usage
 
+// e2e: UI 测试
 module.exports = {
   'default e2e tests': function (browser) {
     // automatically uses dev Server port from /config.index.js

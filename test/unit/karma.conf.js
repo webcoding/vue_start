@@ -3,6 +3,7 @@
 // we are also using it with karma-webpack
 //   https://github.com/webpack/karma-webpack
 
+// unit: 单元测试
 var path = require('path')
 var merge = require('webpack-merge')
 var baseConfig = require('../../build/webpack.base.conf')
