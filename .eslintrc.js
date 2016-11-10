@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
+    // ecmaVersion: 6,
     sourceType: 'module'
   },
   // http://eslint.org/docs/rules/
@@ -11,6 +12,11 @@ module.exports = {
   plugins: [
     'html'
   ],
+  // 'env': {
+  //   'browser': true,
+  //   'node': true,
+  //   'es6': true
+  // },
   // add your custom rules here
   'rules': {
     // allow paren-less arrow functions
