@@ -25,3 +25,31 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## 常见问题
+
+此项目基于 vue-cli init webpack 项目为基础运行
+
+#### PhantomJS 单元测试不能正常运行
+
+确保设置了下面配置，并安装了 npm 包 `phantomjs-prebuilt karma-phantomjs-launcher`
+
+```
+export PHANTOMJS_BIN=/usr/local/lib/node_modules/phantomjs-prebuilt/bin/phantomjs
+```
+
+
+#### 不使用 PhantomJS 改为 Chrome，无法找到路径
+
+确保设置下面配置（在 ~/.zshrc` 中），并安装 npm 包  `karma-chrome-launcher`
+
+```
+export CHROME_BIN=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+```
+
+
+#### 无法运行 UI 测试
+
+报错 `Unsupported major.minor version 52.0`，是因为 selenium-server 由 2.x 升级到 3.x，需要 java JESDK8 环境支持
+
+参见：http://stackoverflow.com/questions/22489398/unsupported-major-minor-version-52-0
