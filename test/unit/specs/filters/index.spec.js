@@ -1,4 +1,4 @@
-import {host, timeAgo} from 'src/filters'
+import {host, timeAgo} from 'src/filters/index'
 
 describe('filters/index.js', () => {
   describe('filters: timeAgo', () => {
