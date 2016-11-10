@@ -9,6 +9,8 @@ module.exports = {
 
   "selenium": {
     "start_process": true,
+    //3.0.1的 jar 包，需要 JESDK8
+    //http://stackoverflow.com/questions/22489398/unsupported-major-minor-version-52-0
     "server_path": "node_modules/selenium-server/lib/runner/selenium-server-standalone-3.0.1.jar",
     "host": "127.0.0.1",
     "port": 4444,

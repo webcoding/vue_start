@@ -54,7 +54,7 @@ module.exports = function (config) {
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
     browsers: ['Chrome'],       //此处要安装 karma-chrome-launcher
-    // browsers: ['PhantomJS'], //此处要安装 karma-phantomjs-launcher
+    // browsers: ['PhantomJS'], //karma-phantomjs-launcher
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
