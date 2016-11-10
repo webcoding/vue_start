@@ -53,8 +53,14 @@ module.exports = function (config) {
     // 1. install corresponding karma launcher
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
-    browsers: ['Chrome'],       //此处要安装 karma-chrome-launcher
-    // browsers: ['PhantomJS'], //karma-phantomjs-launcher
+
+    // 先在 .zshrc 中设置 CHROME_BIN 或 PHANTOMJS_BIN 路径
+    // export CHROME_BIN=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+    // browsers: ['Chrome'],       //此处要安装 karma-chrome-launcher
+
+    // export PHANTOMJS_BIN=/usr/local/lib/node_modules/phantomjs-prebuilt/bin/phantomjs
+    browsers: ['PhantomJS'],      //安装 phantomjs-prebuilt karma-phantomjs-launcher
+
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
