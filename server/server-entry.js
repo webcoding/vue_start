@@ -1,4 +1,4 @@
-import { main, router, store } from './main'
+import { app, router, store } from './render'
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -30,6 +30,6 @@ export default context => {
     // store to pick-up the server-side state without having to duplicate
     // the initial data fetching on the client.
     context.initialState = store.state
-    return main
+    return app
   })
 }

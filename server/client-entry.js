@@ -1,5 +1,5 @@
 require('es6-promise').polyfill()
-import { app, store } from './app'
+import { app, store } from '../src/render'
 
 // prime the store with server-initialized state.
 // the state is determined during SSR and inlined in the page markup.
