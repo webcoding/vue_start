@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div id="app">
     <img src="./assets/logo.png">
     <hello></hello>
@@ -25,9 +25,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-</style> -->
+</style>
 
-<template>
+<!-- <template>
   <div id="app">
     <div class="header">
       <div class="inner">
@@ -128,4 +128,4 @@ a
       margin-right 1em
     .github
       display none
-</style>
+</style> -->

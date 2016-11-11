@@ -15,10 +15,11 @@ $offset = 126
 $duration = 1.4s
 
 .spinner
-  position fixed
+  position absolute
   z-index 999
-  right 15px
-  bottom 15px
+  left 50%
+  top 50px
+  margin-left -22px
   opacity 0
   transition opacity .15s ease
   animation rotator $duration linear infinite

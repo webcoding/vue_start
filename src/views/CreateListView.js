@@ -11,7 +11,7 @@ export function createListView (type) {
       return store.dispatch('FETCH_LIST_DATA', { type })
     },
     render (h) {
-      return h(ItemList, { props: { type }})
+      return h(ItemList, {props: { type }})
     }
   }
 }

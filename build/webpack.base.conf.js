@@ -12,7 +12,8 @@ var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './src/main.js',
+    // vendor: ['vue', 'vue-router', 'vuex', 'firebase', 'lru-cache', 'es6-promise']
   },
   output: {
     path: config.build.assetsRoot,
@@ -50,7 +51,15 @@ module.exports = {
     loaders: [
       {
         test: /\.vue$/,
-        loader: 'vue'
+        loader: 'vue',
+        // // vueConfig
+        // options: {
+        //   postcss: [
+        //     require('autoprefixer')({
+        //       browsers: ['last 3 versions']
+        //     })
+        //   ]
+        // }
       },
       {
         test: /\.js$/,
@@ -87,7 +96,7 @@ module.exports = {
     loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
     postcss: [
       require('autoprefixer')({
-        browsers: ['last 2 versions']
+        browsers: ['last 3 versions']
       })
     ]
   }
