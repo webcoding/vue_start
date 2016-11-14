@@ -11,6 +11,26 @@ exports.assetsPath = function (_path) {
   return path.posix.join(assetsSubDirectory, _path)
 }
 
+var loaders = [
+  {
+    loader: 'css-loader',
+    options: {
+      modules: true
+    }
+  },
+  {
+    loader: 'postcss-loader'
+  },
+  {
+    loader: 'sass-loader'
+  }
+];
+
+ExtractTextPlugin.extract({
+  fallbackLoader: 'style-loader',
+  loader: loaders,
+})
+
 exports.cssLoaders = function (options) {
   options = options || {}
   // generate loader string to be used with extract text plugin
