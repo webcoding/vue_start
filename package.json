@@ -49,7 +49,7 @@
     "eslint-plugin-standard": "^2.0.1",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "file-loader": "^0.9.0",
     "function-bind": "^1.0.2",
     "html-webpack-plugin": "^2.8.1",
@@ -78,7 +78,7 @@
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.3",
+    "webpack": "^2.1.0-beta.25",
     "webpack-dev-middleware": "^1.8.3",
     "webpack-hot-middleware": "^2.13.2",
     "webpack-merge": "^0.15.0"

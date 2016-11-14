@@ -10,6 +10,16 @@ var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
+// 直接使用 DefinePlugin
+// 或 使用下面的方法，结合 loaders => require.resolve('ajax') 传入 baseUrl
+// const protocol = 'http://'
+// var port = ''
+// const apiEnv = {
+//   test: protocol + 'test.api.xx.com' + port,
+//   production: protocol + 'api.xx.com' + port,
+//   development: protocol + 'dev.api.xx.com' + port
+// };
+
 module.exports = {
   entry: {
     app: './src/main.js',
@@ -34,6 +44,8 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
+    // loader 从下至上为处理顺序，所以语法检查要房子最下面
+    // 为保险起见，也可以使用 preLoaders 配置项，确保对源代码在没编译前进行检查
     preLoaders: [
       {
         test: /\.vue$/,
@@ -49,6 +61,10 @@ module.exports = {
       }
     ],
     loaders: [
+      // {
+      //   test: require.resolve('ajax'),
+      //   loader: "imports-loader?baseUrl=>"+ JSON.stringify(apiEnv[ process.env.NODE_ENV || "development"])
+      // },
       {
         test: /\.vue$/,
         loader: 'vue',
@@ -90,6 +106,7 @@ module.exports = {
     ]
   },
   eslint: {
+    // 友好提示语法错误，支持点击错误提示直接打开文件
     formatter: require('eslint-friendly-formatter')
   },
   vue: {

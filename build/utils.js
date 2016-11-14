@@ -1,5 +1,7 @@
 var path = require('path')
 var config = require('../config')
+// 从bundle中提取出特定的text到一个文件中
+// 可以把 css 从 js 中独立抽离出来
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.assetsPath = function (_path) {
