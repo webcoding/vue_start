@@ -57,10 +57,10 @@ module.exports = function (config) {
 
     // 先在 .zshrc 中设置 CHROME_BIN 或 PHANTOMJS_BIN 路径
     // export CHROME_BIN=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
-    // browsers: ['Chrome'],       //此处要安装 karma-chrome-launcher
+    // browsers: ['Chrome'],       // 此处要安装 karma-chrome-launcher
 
     // export PHANTOMJS_BIN=/usr/local/lib/node_modules/phantomjs-prebuilt/bin/phantomjs
-    browsers: ['PhantomJS'],      //安装 phantomjs-prebuilt karma-phantomjs-launcher
+    browsers: ['PhantomJS'],      // 安装 phantomjs-prebuilt karma-phantomjs-launcher
 
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['spec', 'coverage'],
