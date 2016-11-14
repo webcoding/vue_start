@@ -10,16 +10,6 @@ var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
-// 直接使用 DefinePlugin
-// 或 使用下面的方法，结合 loaders => require.resolve('ajax') 传入 baseUrl
-// const protocol = 'http://'
-// var port = ''
-// const apiEnv = {
-//   test: protocol + 'test.api.xx.com' + port,
-//   production: protocol + 'api.xx.com' + port,
-//   development: protocol + 'dev.api.xx.com' + port
-// };
-
 module.exports = {
   entry: {
     app: './src/main.js',
@@ -61,10 +51,6 @@ module.exports = {
       }
     ],
     loaders: [
-      // {
-      //   test: require.resolve('ajax'),
-      //   loader: "imports-loader?baseUrl=>"+ JSON.stringify(apiEnv[ process.env.NODE_ENV || "development"])
-      // },
       {
         test: /\.vue$/,
         loader: 'vue',
