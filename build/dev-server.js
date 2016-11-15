@@ -2,6 +2,7 @@ require('./check-versions')()
 var config = require('../config')
 if (!process.env.NODE_ENV) process.env.NODE_ENV = config.dev.env
 var path = require('path')
+var favicon = require('serve-favicon')
 var express = require('express')
 var webpack = require('webpack')
 var opn = require('opn')
@@ -58,6 +59,9 @@ app.use(hotMiddleware)
 // serve pure static assets
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
+
+// app.use(express.static(path.resolve(__dirname, 'dist')))
+// app.use(favicon(path.resolve(__dirname, 'static/logo.png')))
 
 module.exports = app.listen(port, function (err) {
   if (err) {

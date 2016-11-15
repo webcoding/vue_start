@@ -16,10 +16,10 @@ var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 // http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/
 // https://webpack.vuefe.cn/how-to/upgrade-from-webpack-1/
 module.exports = {
-  devtool: "source-map",
+  // devtool: "source-map",
   entry: {
     app: './src/main.js',
-    // vendor: ['vue', 'vue-router', 'vuex', 'es6-promise']
+    vendor: ['vue', 'vue-router', 'vuex', 'es6-promise']
   },
   output: {
     path: config.build.assetsRoot,
@@ -50,7 +50,7 @@ module.exports = {
 
     // These files are tried when trying to resolve a directory
     // 入口文件：在解析一个目录时，这些文件将被视为目录的入口文件。
-    mainFiles: ["index"]
+    mainFiles: ["index"],
 
     // These fields in the description files offer aliasing in this package
     // The content of these fields is an object where requests to a key are mapped to the corresponding value
@@ -109,19 +109,19 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue',
-        // // vueConfig
-        // options: {
-        //   postcss: [
-        //     require('autoprefixer')({
-        //       browsers: ['last 3 versions']
-        //     })
-        //   ]
-        // }
+        loader: 'vue-loader',
+        // vueConfig
+        options: {
+          postcss: [
+            require('autoprefixer')({
+              browsers: ['last 3 versions']
+            })
+          ]
+        }
       },
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         include: projectRoot,
         exclude: /node_modules/
       },
@@ -139,8 +139,9 @@ module.exports = {
             loader: "css-loader",
             options: {
               modules: true
+            }
           }
-        ],
+        ]
       },
       {
         test: /\.scss$/,
@@ -156,32 +157,32 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url',
-        query: {
+        loader: 'url-loader',
+        options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url',
-        query: {
+        loader: 'url-loader',
+        options: {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
     ]
   },
-  eslint: {
-    // 友好提示语法错误，支持点击错误提示直接打开文件
-    formatter: require('eslint-friendly-formatter')
-  },
-  vue: {
-    loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
-    postcss: [
-      require('autoprefixer')({
-        browsers: ['last 3 versions']
-      })
-    ]
-  }
+  // eslint: {
+  //   // 友好提示语法错误，支持点击错误提示直接打开文件
+  //   formatter: require('eslint-friendly-formatter')
+  // },
+  // vue: {
+  //   loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
+  //   postcss: [
+  //     require('autoprefixer')({
+  //       browsers: ['last 3 versions']
+  //     })
+  //   ]
+  // }
 }

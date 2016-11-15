@@ -33,7 +33,7 @@ if (isProd) {
   const bundlePath = resolve('./dist/server-bundle.js')
   renderer = createRenderer(fs.readFileSync(bundlePath, 'utf-8'))
 } else {
-  require('./build/setup-dev-server')(app, bundle => {
+  require('./dev-server')(app, bundle => {
     renderer = createRenderer(bundle)
   })
 }
@@ -49,7 +49,7 @@ function createRenderer (bundle) {
 
 app.use(compression({threshold: 0}))
 app.use('/dist', express.static(resolve('./dist')))
-app.use(favicon(resolve('./src/assets/logo.png')))
+// app.use(favicon(resolve('./src/assets/logo.png')))
 
 app.get('*', (req, res) => {
   if (!renderer) {
